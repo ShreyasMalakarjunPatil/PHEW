@@ -32,7 +32,9 @@ The code base currently supports three classification datasets, CIFAR-10, CIFAR-
 
 ### Prune
 
-1. PHEW : The network construction algorithm based on biased random walks. Given a network at initialization and a desired pruning ratio, the mask is initialized with all zeros and then the connections are placed according to the random walks.
+Given a network at initialization and a desired pruning ratio,
+
+1. PHEW : The mask is initialized with all zeros and then the connections are placed according to the random walks.
 2. PHEW_Res : The mask is initialized using a previously used PHEW mask at a higher pruning ratio, and connections are added using the same random walk procedure.
 
 ### Experiments
