@@ -2,61 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25965b5e-ee5c-413c-a29a-417cd943be51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PHEW.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/Ablation_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/Inverse_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/Kernel_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/Normal_Init_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/PHEW2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/ReInit_Evci_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/ReInit_Evci_Random.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/ReInit_Liu_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/ReInit_Liu_Random.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/ReInit_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/SynFlowL2_LWRS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/SynFlowL2_Width.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/SynFlow_LWRS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/SynFlow_Width.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/Uniform_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Ablations/Xavier_Init_PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Baseline_FC.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/GRASP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/MAG.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/PHEW.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/PHEW_Res.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/Random.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/SNIP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/SynFlow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/SynFlowL2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Layers/Layers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/resnet_cifar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/resnet_cifar2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/resnet_tinyimagenet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/vgg_cifar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/vgg_tinyimagenet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHEW/phew.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/Utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/biased_randwalk_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/grasp_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/mag_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/phew_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/random_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/snip_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/synflow_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/synflowl2_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prune/uniform_randwalk_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/custom_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/tiny-imagenet-setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prune/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/GRASP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/GRASP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/MAG.py" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/MAG.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHEW/phew.py" beforeDir="false" afterPath="$PROJECT_DIR$/PHEW/phew.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/custom_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/custom_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +45,18 @@
       <option name="presentableId" value="Default" />
       <updated>1621093290030</updated>
     </task>
+    <task id="LOCAL-00001" summary="new commit">
+      <created>1622408422334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622408422334</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="new commit" />
   </component>
 </project>

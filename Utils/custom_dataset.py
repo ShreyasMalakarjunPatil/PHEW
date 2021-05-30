@@ -1,3 +1,6 @@
+# Code provided by authors of Pruning neural networks without any data by iteratively conserving synaptic flow.
+# # We thank the authors of SynFlow. https://github.com/ganguli-lab/Synaptic-Flow
+
 import io
 import pandas as pd
 import glob

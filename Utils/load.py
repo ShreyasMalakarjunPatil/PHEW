@@ -1,3 +1,6 @@
+# Based on the Code provided by authors of Pruning neural networks without any data by iteratively conserving synaptic flow.
+# # We thank the authors of SynFlow. https://github.com/ganguli-lab/Synaptic-Flow
+
 import torch
 from torchvision import datasets, transforms
 import torch.optim as optim

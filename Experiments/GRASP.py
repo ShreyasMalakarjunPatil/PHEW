@@ -18,7 +18,7 @@ def run(args):
     test_loader = load.dataloader(args.dataset, args.test_batch_size, False, args.workers)
 
     model = load.model(args.model, args.dataset)(input_shape, num_classes).to(dev)
-    #results = []
+
     for i in range(len(args.prune_perc)):
 
         print(args.experiment, str(args.prune_perc[len(args.prune_perc) - i - 1]), str(args.model), str(args.dataset))
@@ -52,8 +52,3 @@ def run(args):
 
         with open(args.experiment + str(args.prune_perc[len(args.prune_perc)-i-1]) + str(args.model) + str(args.dataset) +str(args.seed)+ '_Mask.pkl', "wb") as fout2:
             pkl.dump(weight_masks, fout2, protocol=pkl.HIGHEST_PROTOCOL)
-
-        #results.append(Utils.path_kernel_trace(sparse_model,weight_masks,bias_masks,train_loader,dev))
-
-    #with open(args.experiment +  str(args.model) + str(args.dataset) +str(args.seed)+ '.pkl', "wb") as fout:
-    #    pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)

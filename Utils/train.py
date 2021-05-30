@@ -57,6 +57,7 @@ def train(network, loss, optimizer, train_loader, test_loader, dev, epochs, sche
         avg_loss, acc1, acc5 = test(network, loss, test_loader, dev)
         if acc1>acc_max:
             net = copy.deepcopy(network)
+            acc_max = acc1
         accuracy1.append(acc1)
         accuracy5.append(acc5)
         test_loss.append(avg_loss)

@@ -12,18 +12,20 @@ def run(args):
     dev = load.device(args.gpu)
 
     input_shape, num_classes = load.dimension(args.dataset)
-    prune_loader = load.dataloader(args.dataset, args.prune_batch_size, True, args.workers, args.prune_dataset_size*num_classes)
     train_loader = load.dataloader(args.dataset, args.train_batch_size, True, args.workers)
     test_loader = load.dataloader(args.dataset, args.train_batch_size, False, args.workers)
 
     model = load.model(args.model, args.dataset)(input_shape, num_classes).to(dev)
 
-    loss = nn.CrossEntropyLoss()
-    opt, opt_kwargs = load.optimizer(args.optimizer)
-    optimizer = opt(model.parameters(), lr=args.lr, weight_decay=args.weight_decay, **opt_kwargs)
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.lr_drops, gamma=args.lr_drop_rate)
+    if args.pre_epochs > 0:
 
-    model = train.train_mag(model, loss, optimizer, train_loader,test_loader, dev, args.epochs, scheduler)
+        loss = nn.CrossEntropyLoss()
+        opt, opt_kwargs = load.optimizer(args.optimizer)
+
+        optimizer = opt(model.parameters(), lr=args.lr, weight_decay=args.weight_decay, **opt_kwargs)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.lr_drops, gamma=args.lr_drop_rate)
+
+        model = train.train_mag(model, loss, optimizer, train_loader,test_loader, dev, args.pre_epochs, scheduler)
 
 
     for i in range(len(args.prune_perc)):
@@ -34,9 +36,14 @@ def run(args):
         loss = nn.CrossEntropyLoss()
         opt, opt_kwargs = load.optimizer(args.optimizer)
 
-        optimizer = opt(sparse_model.parameters(), lr=args.lr, weight_decay=args.weight_decay, **opt_kwargs)
-        (sparse_model,weight_masks, bias_masks) = train.train_mag2(sparse_model, loss, optimizer, train_loader,
-                                                                        test_loader, dev, 25, prune_perc)
+        if args.prune_iterations > 0:
+
+            optimizer = opt(sparse_model.parameters(), lr=args.lr, weight_decay=args.weight_decay, **opt_kwargs)
+            (sparse_model,weight_masks, bias_masks) = train.train_mag2(sparse_model, loss, optimizer, train_loader,
+                                                                        test_loader, dev, args.prune_iterations, prune_perc)
+
+        else:
+            weight_masks, bias_masks = mag_utils.mag_prune_masks(sparse_model, prune_perc, dev)
 
         sparse_model.set_masks(weight_masks, bias_masks)
         sparse_model.to(dev)

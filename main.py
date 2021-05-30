@@ -1,11 +1,11 @@
 import argparse
-from Experiments import Baseline_FC
+from Experiments import Baseline_FC # Dense baseline network
 from Experiments import SNIP
 from Experiments import GRASP
 from Experiments import SynFlow
 from Experiments import SynFlowL2
 from Experiments import Random
-from Experiments import MAG
+from Experiments import MAG # Magnitude Pruning
 from Experiments import PHEW_Res
 from Experiments import PHEW
 from Experiments.Ablations import Ablation_main
