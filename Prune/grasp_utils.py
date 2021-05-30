@@ -8,10 +8,13 @@ def grasp_prune_masks(network, prune_perc, dataloader, loss, dev):
     net.to(dev)
     net.train()
 
+    temp = 200
+    eps = 1e-10
+
     stopped_grads = 0
     for batch_idx, (data,target) in enumerate(dataloader):
         data, target = data.to(dev), target.to(dev)
-        output = net(data) / 200
+        output = net(data) / temp
         L = loss(output, target)
 
         grads = torch.autograd.grad(L, [p for p in net.parameters()], create_graph=False)
@@ -20,7 +23,7 @@ def grasp_prune_masks(network, prune_perc, dataloader, loss, dev):
 
     for batch_idx, (data, target) in enumerate(dataloader):
         data, target = data.to(dev), target.to(dev)
-        output = net(data) / 200
+        output = net(data) / temp
         L = loss(output, target)
 
         grads = torch.autograd.grad(L, [p for p in net.parameters()], create_graph=True)
@@ -35,7 +38,7 @@ def grasp_prune_masks(network, prune_perc, dataloader, loss, dev):
         if len(p.data.size()) != 1:
             scores.append(p.grad * p.data)
             norm = norm+torch.abs(torch.sum(p.grad * p.data))
-    norm = norm + 1e-10
+    norm = norm + eps
 
     all_weights = []
     for i in range(len(scores)):

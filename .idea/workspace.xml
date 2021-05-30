@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25965b5e-ee5c-413c-a29a-417cd943be51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Experiments/GRASP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/GRASP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Experiments/MAG.py" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/MAG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHEW/phew.py" beforeDir="false" afterPath="$PROJECT_DIR$/PHEW/phew.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/custom_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/custom_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prune/grasp_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prune/grasp_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/tiny-imagenet-setup.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,11 +51,19 @@
       <option name="project" value="LOCAL" />
       <updated>1622408422334</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated magnitude pruning">
+      <created>1622409165710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622409165710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="new commit" />
+    <MESSAGE value="updated magnitude pruning" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated magnitude pruning" />
   </component>
 </project>

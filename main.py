@@ -6,8 +6,8 @@ from Experiments import SynFlow
 from Experiments import SynFlowL2
 from Experiments import Random
 from Experiments import MAG # Magnitude Pruning
-from Experiments import PHEW_Res
-from Experiments import PHEW
+from Experiments import PHEW_Res # PHEW with increasing density and using masks from a lower density level.
+from Experiments import PHEW # PHEW starting with zero masks.
 from Experiments.Ablations import Ablation_main
 
 if __name__ == '__main__':
