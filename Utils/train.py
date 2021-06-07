@@ -92,14 +92,16 @@ def train_mag(network, loss, optimizer, train_loader, test_loader, dev, epochs, 
 
         train_curve.append(train_loss/len(train_loader.dataset))
         avg_loss, acc1, acc5 = test(network, loss, test_loader, dev)
-
+        if acc1>acc_max:
+            net = copy.deepcopy(network)
+            acc_max = acc1
         accuracy1.append(acc1)
         accuracy5.append(acc5)
         test_loss.append(avg_loss)
 
         scheduler.step()
 
-    return network
+    return net
 
 def train_mag2(network, loss, optimizer, train_loader, test_loader, dev, epochs, prune_perc):
 
@@ -116,6 +118,12 @@ def train_mag2(network, loss, optimizer, train_loader, test_loader, dev, epochs,
         e = epoch + 1.0
         p = prune_perc - prune_perc * ( 1.0 - e/epochs )**3
         print(p)
+        if epoch > 0:
+            lkj = 0
+            for ppp in net.parameters():
+                if len(ppp.data.size()) != 1:
+                    ppp.data = ppp.data * weight_masks[lkj]
+                    lkj += 1
         weight_masks, bias_masks = mag_utils.mag_prune_masks(net, p, dev)
         network.set_masks(weight_masks, bias_masks)
         network.to(dev)
