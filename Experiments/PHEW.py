@@ -51,8 +51,8 @@ def run(args):
         results.append(accuracy1)
         results.append(accuracy5)
 
-        with open(args.experiment + str(args.prune_perc) + str(args.model) + str(args.dataset) +str(args.seed)+ '.pkl', "wb") as fout:
+        with open(args.experiment + str(args.prune_perc[len(args.prune_perc) - i - 1]) + str(args.model) + str(args.dataset) + str(args.seed) + '.pkl', "wb") as fout:
             pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
 
-        with open(args.experiment + str(args.prune_perc) + str(args.model) + str(args.dataset) +str(args.seed)+ '_Mask.pkl', "wb") as fout2:
+        with open(args.experiment + str(args.prune_perc[len(args.prune_perc) - i - 1]) + str(args.model) + str(args.dataset) + str(args.seed) + '_Mask.pkl', "wb") as fout2:
             pkl.dump(weight_masks, fout2, protocol=pkl.HIGHEST_PROTOCOL)
