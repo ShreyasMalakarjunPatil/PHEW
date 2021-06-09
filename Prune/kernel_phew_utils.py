@@ -195,9 +195,8 @@ def phew_masks(network, prune_perc,  prob, reverse_prob, weight_masks,bias_masks
                     if weight_masks[num - k - 1].shape[2] == 1:
                         weight_masks[num - k - 1].fill_(1)
                     else:
-                        idx1, idx2, idx3, idx4 = get_param_options(weight_masks[num - k - 1], prev_unit,
-                                                                   reverse_prob[num - k - 1][int(prev_unit)],
-                                                                   kernel_prob[num - k - 1], forward=False)
+                        idx1, idx2 = get_param_options(weight_masks[num - k - 1], prev_unit,
+                                                                   reverse_prob[num - k - 1][int(prev_unit)],forward=False)
                         # weight_masks[num-k-1][idx1,idx2,idx3,idx4] = 1
                         weight_masks[num - k - 1][idx1, idx2].fill_(1)
                         bias_masks[num - k - 1][idx1] = 1
