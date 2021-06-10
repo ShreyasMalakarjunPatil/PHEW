@@ -37,8 +37,8 @@ def grasp_prune_masks(network, prune_perc, dataloader, loss, dev):
     for p in net.parameters():
         if len(p.data.size()) != 1:
             scores.append(p.grad * p.data)
-            norm = norm+torch.abs(torch.sum(p.grad * p.data))
-    norm = norm + eps
+            norm = norm+torch.sum(p.grad * p.data)
+    norm = torch.abs(norm) + eps
 
     all_weights = []
     for i in range(len(scores)):

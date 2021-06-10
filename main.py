@@ -23,14 +23,12 @@ if __name__ == '__main__':
                                  'ReInit_PHEW', 'ReInit_Evci_PHEW', 'ReInit_Liu_PHEW', 'ReInit_Evci_Random', 'ReInit_Liu_Random',
                                  'Normal_Init_SNIP', 'Xavier_Init_SNIP', 'Normal_Init_IMAG', 'Xavier_Init_IMAG'])
     parser.add_argument('--expid', type=str, default='0')
-    parser.add_argument('--model', type=str, default='vgg19-bn',
+    parser.add_argument('--model', type=str, default='ResNet20',
                         choices=['vgg11', 'vgg11-bn', 'vgg13', 'vgg13-bn', 'vgg16', 'vgg16-bn', 'vgg19', 'vgg19-bn',
-                                 'ResNet20',
-                                 'ResNet18', 'ResNet34', 'ResNet50', 'ResNet101', 'ResNet152', 'lenet5', 'ResNet32',
-                                 'mlp_3'])
+                                 'ResNet20','ResNet18', 'ResNet34', 'ResNet50', 'ResNet101', 'ResNet152', 'lenet5', 'ResNet32', ])
     parser.add_argument('--dataset', type=str, default='cifar100',
                         choices=['mnist', 'cifar10', 'cifar100', 'tiny-imagenet'])
-    parser.add_argument('--optimizer', type=str, default='sgd',
+    parser.add_argument('--optimizer', type=str, default='momentum',
                         choices=['sgd', 'adam', 'momentum', 'rms'])
     parser.add_argument('--train_batch_size', type=int, default=128)
     parser.add_argument('--test_batch_size', type=int, default=256)

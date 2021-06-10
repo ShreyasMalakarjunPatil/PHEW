@@ -9,6 +9,7 @@ def run(args):
 
     torch.manual_seed(args.seed)
     dev = load.device(args.gpu)
+
     print(args.model, args.dataset)
     input_shape, num_classes = load.dimension(args.dataset)
     train_loader = load.dataloader(args.dataset, args.train_batch_size, True, args.workers)

@@ -11,11 +11,13 @@ from Models import resnet_cifar
 from Models import resnet_cifar2
 from Models import resnet_tinyimagenet
 
+# Use gpu if available and set the gpu number to the one entered by the user.
 def device(gpu):
     use_cuda = torch.cuda.is_available()
     print('Use Cuda',use_cuda)
     return torch.device(("cuda:" + str(gpu)) if use_cuda else "cpu")
 
+# Returns the image dimensions and the number of classes in the dataset provided by the user.
 def dimension(dataset):
     if dataset == 'mnist':
         input_shape, num_classes = (1, 28, 28), 10
