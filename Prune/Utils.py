@@ -15,14 +15,6 @@ def count_weights(net):
             num = num + p.numel()
     return num
 
-def count_res(net):
-    num = 0
-    for p in net.parameters():
-        if len(p.data.size()) == 4:
-            if p.data.size()[2]==1:
-                num = num + p.numel()
-    return num
-
 def count(weight_masks):
     n = 0
     for i in range(len(weight_masks)):
@@ -32,16 +24,6 @@ def count(weight_masks):
 def ratio(net,weight_masks):
     print(1.0 - (count(weight_masks)) / (count_weights(net)))
 
-
-
-def real_ratio(net,prune_perc):
-    num_weights = count_weights(net)
-    res = count_res(net)
-
-    rem = num_weights*( 1.0 - prune_perc/100.0 )
-
-    rrem = rem - res
-    return 100.0-100.0*rrem/num_weights
 
 def path_kernel_trace(network, weight_mask, bias_mask, dataloader, dev):
     (data, _) = next(iter(dataloader))
@@ -99,22 +81,3 @@ def layerwise_randomshuffle(net,weight_masks,fraction,dev):
         bm.append(mask)
     ratio(net, wm)
     return wm, bm
-
-def gradient_flow(network, dataloader, weight_mask, bias_mask, loss, dev):
-    net = copy.deepcopy(network)
-    net.to(dev)
-    net.set_masks(weight_mask,bias_mask)
-    net.train()
-
-    stopped_grads = 0
-    for batch_idx, (data, target) in enumerate(dataloader):
-        data, target = data.to(dev), target.to(dev)
-        L = loss(net(data), target)
-
-        grads = torch.autograd.grad(L, [p for p in net.parameters()], create_graph=False)
-        flatten_grads = torch.cat([g.reshape(-1) for g in grads if g is not None])
-        stopped_grads += flatten_grads
-
-    gnorm = torch.norm(stopped_grads).sum().data
-
-    return gnorm.data
