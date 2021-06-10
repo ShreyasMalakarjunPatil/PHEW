@@ -50,9 +50,9 @@ python3 main.py --help
 Please find the command for running increasing width experiments with SynFlow and SynFlowL2.
 
 ```train
-python3 main.py --experiment Ablation --ablation_experiment SynFlow_Width --model ResNet20 --dataset cifar10 --optimizer momentum --epochs 160 
+python3 main.py --experiment Ablation --ablation_experiment SynFlow_Width --model ResNet20 --dataset cifar10 --optimizer momentum --epochs 160 --prune_perc 93.1 
 
-python3 main.py --experiment Ablation --ablation_experiment SynFlowL2_Width --model ResNet20 --dataset cifar10 --optimizer momentum --epochs 160 
+python3 main.py --experiment Ablation --ablation_experiment SynFlowL2_Width --model ResNet20 --dataset cifar10 --optimizer momentum --epochs 160 --prune_perc 93.1 
 ```
 
 #### Baselines
