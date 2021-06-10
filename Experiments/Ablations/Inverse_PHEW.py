@@ -38,26 +38,26 @@ def run(args):
         sparse_model.set_masks(weight_masks, bias_masks)
         sparse_model.to(dev)
 
-        #optimizer = opt(sparse_model.parameters(), lr=args.lr, weight_decay=args.weight_decay, **opt_kwargs)
-        #scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.lr_drops, gamma=args.lr_drop_rate)
+        optimizer = opt(sparse_model.parameters(), lr=args.lr, weight_decay=args.weight_decay, **opt_kwargs)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.lr_drops, gamma=args.lr_drop_rate)
 
-        #(trained_model,train_curve, test_loss, accuracy1, accuracy5) = train.train(sparse_model, loss, optimizer, train_loader,
-        #                                                                test_loader, dev, args.epochs, scheduler)
+        (trained_model,train_curve, test_loss, accuracy1, accuracy5) = train.train(sparse_model, loss, optimizer, train_loader,
+                                                                        test_loader, dev, args.epochs, scheduler)
 
-        #results = []
+        results = []
 
-        #results.append(train_curve)
-        #results.append(test_loss)
-        #results.append(accuracy1)
-        #results.append(accuracy5)
+        results.append(train_curve)
+        results.append(test_loss)
+        results.append(accuracy1)
+        results.append(accuracy5)
 
-        #with open(args.ablation_experiment + str(args.prune_perc[len(args.prune_perc)-i-1]) + str(args.model) + str(args.dataset) +str(args.seed)+ '.pkl', "wb") as fout:
-        #    pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
+        with open(args.ablation_experiment + str(args.prune_perc[len(args.prune_perc)-i-1]) + str(args.model) + str(args.dataset) +str(args.seed)+ '.pkl', "wb") as fout:
+            pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
 
-        #with open(args.ablation_experiment + str(args.prune_perc[len(args.prune_perc) - i - 1]) + str(args.model) + str(args.dataset) + str(args.seed) + '_Mask.pkl', "wb") as fout1:
-        #    pkl.dump(weight_masks, fout1, protocol=pkl.HIGHEST_PROTOCOL)
+        with open(args.ablation_experiment + str(args.prune_perc[len(args.prune_perc) - i - 1]) + str(args.model) + str(args.dataset) + str(args.seed) + '_Mask.pkl', "wb") as fout1:
+            pkl.dump(weight_masks, fout1, protocol=pkl.HIGHEST_PROTOCOL)
 
-        results.append(Utils.path_kernel_trace(sparse_model, weight_masks, bias_masks, train_loader, dev))
+        #results.append(Utils.path_kernel_trace(sparse_model, weight_masks, bias_masks, train_loader, dev))
 
-    with open(args.ablation_experiment + str(args.model) + str(args.dataset) + str(args.seed) + '.pkl', "wb") as fout:
-        pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
+    #with open(args.ablation_experiment + str(args.model) + str(args.dataset) + str(args.seed) + '.pkl', "wb") as fout:
+    #    pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
