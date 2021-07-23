@@ -2,7 +2,7 @@
 
 
 
-This repository is the official implementation of [PHEW](). 
+This repository is the official implementation of [PHEW](http://proceedings.mlr.press/v139/patil21a.html). 
 
 
 ### Requirements
@@ -83,4 +83,4 @@ We thank the authors of [GraSP](https://github.com/alecwangcq/GraSP) and [SynFlo
 
 ### Citation
 
-Please cite our [paper]() if you find this repository useful.
+Please cite our [paper](http://proceedings.mlr.press/v139/patil21a.html) if you find this repository useful.
